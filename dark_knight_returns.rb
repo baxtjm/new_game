@@ -40,7 +40,7 @@ puts "Choose a weapon for your sidekick!"
 puts
 puts "Options: mine detonator, smoke pellets, disruptor"
 weapon = gets.chomp.downcase
-
+puts
 # choose weapon
 valid_weapons = ["mine detonator", "smoke pellets", "disruptor"]
 
@@ -48,7 +48,7 @@ until valid_weapons.include?(weapon)
 puts "Options: mine detonator, smoke pellets, disruptor"
 weapon = gets.chomp.downcase
 end
-
+puts
 case weapon
 when "mine detonator"
   say "#{ally}: These will come in handy!", "💣 💣 💣"
@@ -87,6 +87,38 @@ else
   say(nil, "Since you can't decide will give you Harley Quinn!")
   enemy = "harley quinn"
     shout("harley quinn", "Can we put this on camera for Mr. J⁉️ 📹")
+end
+# untill enemy is in valid enemies
+# keep asking
+puts
+puts " 🦇 " * 20
+puts
+# choose my enemy
+
+puts "Make your move!"
+puts
+puts "Options: Hammer Fists, Crusader Kick, or Super Move"
+ability = gets.chomp.downcase
+puts
+
+def say(move, description)
+  if move.nil?
+     puts description
+  else
+    puts "#{move.capitalize}: #{description}"
+  end
+end
+
+if ability == "hammer fists"
+  say("hammer fists", "No need for a weapon when you got these 👊 👊 ")
+elsif ability == "crusader kick"
+  say("crusader kick", "Staight to the gut❕❗️")
+elsif ability == "super move"
+  say("super move", "Put up a shield and it will break❕❗️")
+else
+  say(nil, "Since you can't decide we'll give you this...")
+  ability = "super move"
+    say("super move", "For Gotham City❕❗️")
 end
 # untill enemy is in valid enemies
 # keep asking
